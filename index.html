@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Timer pomodoro</title>
+</head>
+<body>
+    <div class="All">
+        <div class="Top">
+            <span>Breaks: </span>
+            <span id="breaks">0</span>
+            <input class="Top-botons" id="plus-btn" type="button" value="+">
+            <input class="Top-botons" id="sub-btn" type="button" value="-">
+        </div>
+        <h1 id="watch">25:00</h1>
+        <h3>5:00</h3>
+        <input class="Botons" id="start-btn" type="button" onclick="start()" value="Start">
+        <input class="Botons" id="pause-btn" type="button" onclick="pause()" value="Pause">
+        <input class="Botons" id="stop-btn" type="button" onclick="stop()" value="Stop">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
