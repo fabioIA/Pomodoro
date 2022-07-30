@@ -5,23 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Timer pomodoro</title>
+    <link id="icon" rel="icon" href="icons/P.png">
+    <audio id="minions" src="songs/minions-wake-up.mp3"></audio>
+    <audio id="alarm" src="songs/alarm-clock.mp3"></audio>
+    <audio id="iphone" src="songs/iphone_sms.mp3"></audio>
+    <audio id="pitch" src="songs/pitch-up.mp3"></audio>
+    <title id="title">Timer pomodoro </title>
 </head>
 <body>
-    <div class="All">
-        <div class="Top">
-            <span>Breaks: </span>
-            <span id="breaks">0</span>
-            <input class="Top-botons" id="plus-btn" type="button" value="+">
-            <input class="Top-botons" id="sub-btn" type="button" value="-">
+    <section>
+        <div class="All">
+            <section>
+                <div class="Top">
+                    <span>Breaks: </span>
+                    <span id="breaks">1</span>
+                    <input class="Top-botons" id="plus-btn" type="button" onclick="parseInt(document.getElementById('breaks').innerHTML) < 10 ? document.getElementById('breaks').innerHTML = parseInt(document.getElementById('breaks').innerHTML) + 1 : alert('Maximum: 10')" value="+">
+                    <input class="Top-botons" id="sub-btn" type="button" onclick="parseInt(document.getElementById('breaks').innerHTML) > 1 ? document.getElementById('breaks').innerHTML = parseInt(document.getElementById('breaks').innerHTML) - 1 : alert('Minimum: 1')" value="-">
+                </div>
+            </section>
+
+            <section>
+                <h1 id="watch">25:00</h1>
+                <h3 id="break">5:00</h3>
+            </section>
+
+            <section>
+                <input class="Botons" id="start-btn" type="button" onclick="if(document.getElementById('break').innerHTML == '5:00'){start()}" value="Start">
+                <input class="Botons" id="pause-btn" type="button" onclick="if(document.getElementById('break').innerHTML == '5:00'){pause()}" value="Pause">
+                <input class="Botons" id="stop-btn" type="button" onclick="if(document.getElementById('break').innerHTML == '5:00'){stop()}" value="Stop">
+            </section>
         </div>
-        <h1 id="watch">25:00</h1>
-        <h3>5:00</h3>
-        <input class="Botons" id="start-btn" type="button" onclick="start()" value="Start">
-        <input class="Botons" id="pause-btn" type="button" onclick="pause()" value="Pause">
-        <input class="Botons" id="stop-btn" type="button" onclick="stop()" value="Stop">
-    </div>
+    </section>
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
